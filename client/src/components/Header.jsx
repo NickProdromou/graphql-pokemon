@@ -1,7 +1,7 @@
 import React from "react";
 import Styled from "styled-components";
 import { Page, Row, Column } from "hedron";
-import { colours } from "../style/variables";
+import { spacing, colours } from "../style/variables";
 import { type } from "../style/mixins/index";
 
 const Header = () => (
@@ -24,6 +24,7 @@ const StyledHeader = Styled.header`
     ${type("heading2")};
     color: ${colours.primaryTextColor};    
     font-weight: bold;
+    padding: 0 ${spacing.mid.level1}; 
   }
 `;
 
