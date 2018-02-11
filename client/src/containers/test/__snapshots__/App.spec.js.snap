@@ -2,7 +2,7 @@
 
 exports[`It renders without error 1`] = `
 <div
-  className="App"
+  className="App sc-ifAKCX hgVviL"
 >
   <header
     className="App-header"
@@ -13,14 +13,21 @@ exports[`It renders without error 1`] = `
       Welcome to React
     </h1>
   </header>
-  <p
-    className="App-intro"
+  <div
+    className="sc-EHOje fAsZBD sc-bxivhb jcNPuI"
   >
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
-  </p>
+    <p
+      className="App-intro"
+    >
+      To get started, edit 
+      <code>
+        src/App.js
+      </code>
+       and save to reload.
+    </p>
+  </div>
+  <footer>
+    this is the footer
+  </footer>
 </div>
 `;
