@@ -2,19 +2,32 @@
 
 exports[`It renders without error 1`] = `
 <div
-  className="App sc-ifAKCX hgVviL"
+  className="App sc-EHOje fXHAim"
 >
   <header
-    className="App-header"
+    className="Header sc-ifAKCX gXUorV"
   >
-    <h1
-      className="App-title"
+    <div
+      className="sc-bxivhb bIAnAi"
     >
-      Welcome to React
-    </h1>
+      <section
+        className="sc-bwzfXH irrVft"
+        fluid={true}
+      >
+        <div
+          className="sc-htpNat eWAgNU"
+        >
+          <h1
+            className="HeaderTitle"
+          >
+            Compare a pokémon
+          </h1>
+        </div>
+      </section>
+    </div>
   </header>
   <div
-    className="sc-EHOje fAsZBD sc-bxivhb jcNPuI"
+    className="SiteContainerMain sc-bxivhb jcNPuI"
   >
     <p
       className="App-intro"

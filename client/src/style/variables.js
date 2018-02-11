@@ -45,7 +45,7 @@ export const fontSizes = {
   detail: "12px",
   ui: "16px",
   heading3: "18px",
-  heading2: "24px",
+  heading2: "30px",
   heading1: "36px"
 };
 

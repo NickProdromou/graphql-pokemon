@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders without error 1`] = `
+<header
+  className="Header sc-ifAKCX gXUorV"
+>
+  <div
+    className="sc-bxivhb bIAnAi"
+  >
+    <section
+      className="sc-bwzfXH irrVft"
+      fluid={true}
+    >
+      <div
+        className="sc-htpNat eWAgNU"
+      >
+        <h1
+          className="HeaderTitle"
+        >
+          Compare a pokémon
+        </h1>
+      </div>
+    </section>
+  </div>
+</header>
+`;
