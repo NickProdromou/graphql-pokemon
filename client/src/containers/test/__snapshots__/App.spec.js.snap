@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`It renders without error 1`] = `
+exports[`App Component It renders without error 1`] = `
 <div
-  className="sc-bZQynM fuMuhp"
+  className="sc-gzVnrw dPBYlI"
 >
   <header
     className="Header sc-ifAKCX ivpimK"
@@ -29,15 +29,36 @@ exports[`It renders without error 1`] = `
   <div
     className="SiteContainerMain sc-bxivhb jcNPuI"
   >
-    <p
-      className="App-intro"
+    <section
+      className="Callout sc-bZQynM cRffwJ"
     >
-      To get started, edit 
-      <code>
-        src/App.js
-      </code>
-       and save to reload.
-    </p>
+      <div
+        className="sc-bxivhb bIAnAi"
+      >
+        <div
+          className="sc-htpNat eWAgNU"
+        >
+          <section
+            className="sc-bwzfXH irrVft"
+          >
+            <div
+              className="CalloutInner"
+            >
+              <h2
+                className="CalloutTitle"
+              >
+                Welcome to the Pokémon comparer
+              </h2>
+              <h3
+                className="CalloutSubtitle"
+              >
+                Select 2 pokemon and compare their unique traits stats and skills against one another
+              </h3>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
   </div>
   <footer
     className="Footer sc-EHOje doCFlj"
