@@ -3,6 +3,7 @@ import Styled from "styled-components";
 import { Page } from "hedron";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const App = () => (
   <SiteContainer fluid>
@@ -12,7 +13,7 @@ const App = () => (
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>
     </Page>
-    <footer>this is the footer</footer>
+    <Footer />
   </SiteContainer>
 );
 

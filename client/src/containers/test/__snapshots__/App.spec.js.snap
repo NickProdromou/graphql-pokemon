@@ -2,10 +2,10 @@
 
 exports[`It renders without error 1`] = `
 <div
-  className="App sc-EHOje fXHAim"
+  className="sc-bZQynM fuMuhp"
 >
   <header
-    className="Header sc-ifAKCX gXUorV"
+    className="Header sc-ifAKCX ivpimK"
   >
     <div
       className="sc-bxivhb bIAnAi"
@@ -39,8 +39,27 @@ exports[`It renders without error 1`] = `
        and save to reload.
     </p>
   </div>
-  <footer>
-    this is the footer
+  <footer
+    className="Footer sc-EHOje doCFlj"
+  >
+    <div
+      className="sc-bxivhb bIAnAi"
+    >
+      <section
+        className="sc-bwzfXH irrVft"
+        fluid={true}
+      >
+        <div
+          className="sc-htpNat eWAgNU"
+        >
+          <h1
+            className="FooterText"
+          >
+            © Nick Prodromou 2018
+          </h1>
+        </div>
+      </section>
+    </div>
   </footer>
 </div>
 `;
