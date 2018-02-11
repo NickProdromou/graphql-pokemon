@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Callout component renders correctly with correct props 1`] = `
+<section
+  className="Callout sc-ifAKCX eLjFrW"
+>
+  <div
+    className="sc-bxivhb bIAnAi"
+  >
+    <div
+      className="sc-htpNat eWAgNU"
+    >
+      <section
+        className="sc-bwzfXH irrVft"
+      >
+        <div
+          className="CalloutInner"
+        >
+          <h2
+            className="CalloutTitle"
+          >
+            This is a title
+          </h2>
+          <h3
+            className="CalloutSubtitle"
+          >
+            this is a subtitle
+          </h3>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Callout component uses default props 1`] = `
+<section
+  className="Callout sc-ifAKCX eLjFrW"
+>
+  <div
+    className="sc-bxivhb bIAnAi"
+  >
+    <div
+      className="sc-htpNat eWAgNU"
+    >
+      <section
+        className="sc-bwzfXH irrVft"
+      >
+        <div
+          className="CalloutInner"
+        >
+          <h2
+            className="CalloutTitle"
+          >
+            This is a title
+          </h2>
+          <h3
+            className="CalloutSubtitle"
+          >
+            
+          </h3>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+`;

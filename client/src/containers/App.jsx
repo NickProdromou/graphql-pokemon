@@ -4,14 +4,16 @@ import { Page } from "hedron";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Callout from "../components/Callout";
 
 const App = () => (
   <SiteContainer fluid>
     <Header />
     <Page className="SiteContainerMain" fluid>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+      <Callout
+        title="Welcome to the Pokémon comparer"
+        subtitle="Select 2 pokemon and compare their unique traits stats and skills against one another"
+      />
     </Page>
     <Footer />
   </SiteContainer>
