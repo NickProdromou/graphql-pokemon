@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`It renders without error 1`] = `
+exports[`Footer Component It renders without error 1`] = `
 <footer
   className="Footer sc-ifAKCX gFPhJs"
 >

@@ -2,7 +2,7 @@
 
 exports[`App Component It renders without error 1`] = `
 <div
-  className="sc-gzVnrw dPBYlI"
+  className="sc-htoDjs biwkzE"
 >
   <header
     className="Header sc-ifAKCX ivpimK"
@@ -30,7 +30,7 @@ exports[`App Component It renders without error 1`] = `
     className="SiteContainerMain sc-bxivhb jcNPuI"
   >
     <section
-      className="Callout sc-bZQynM cRffwJ"
+      className="Callout sc-bZQynM gGWSAb"
     >
       <div
         className="sc-bxivhb bIAnAi"
@@ -59,6 +59,71 @@ exports[`App Component It renders without error 1`] = `
         </div>
       </div>
     </section>
+    <div
+      className="sc-gzVnrw jKwgWP"
+    >
+      <div
+        className="sc-bxivhb bIAnAi"
+      >
+        <section
+          className="SelectionRow sc-bwzfXH irrVft"
+        >
+          <div
+            className="sc-htpNat hrIxvT"
+          >
+            <div
+              className="SelectionInner"
+            >
+              <h2
+                className="selectionTitle"
+              >
+                pokemon 1
+              </h2>
+              <p>
+                AutocompleteSearchBar
+              </p>
+              <p>
+                PokemonCard
+              </p>
+            </div>
+          </div>
+          <div
+            className="sc-htpNat hrIxvT"
+          >
+            <div
+              className="SelectionInner"
+            >
+              <h2
+                className="selectionTitle"
+              >
+                pokemon 2
+              </h2>
+              <p>
+                AutocompleteSearchBar
+              </p>
+              <p>
+                PokemonCard
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          className="sc-bwzfXH irrVft"
+        >
+          <div
+            className="sc-htpNat bKOCBb"
+          >
+            <div
+              className="SelectionCompareButton"
+            >
+              <button>
+                Compare
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
   <footer
     className="Footer sc-EHOje doCFlj"

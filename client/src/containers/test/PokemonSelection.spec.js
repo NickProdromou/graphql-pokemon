@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Header from "../Header";
+import PokemonSelection from "../PokemonSelection";
 
-describe("Header Component", () => {
+describe("PokemonSelection Component", () => {
   test("It renders without error", () => {
-    const component = renderer.create(<Header />);
+    const component = renderer.create(<PokemonSelection />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
