@@ -1,18 +1,27 @@
 import React, { Component } from "react";
-import Styled from 'styled-components';
+import Styled from "styled-components";
 import { Page, Column, Row } from "hedron";
 
 import { spacing, colours } from "../style/variables";
 import { type } from "../style/mixins/index";
 
+import PokemonSearch from "../components/PokemonSearch";
+import PokemonCard from "../components/PokemonCard";
+
 class PokemonSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstPokemonSelected: true,
-      secondPokemonSelected: true
+      firstPokemonSelected: false,
+      secondPokemonSelected: false
     };
   }
+
+  checkChildInput = (value, identifier) => {
+    this.setState({
+      [identifier]: value.suggestion
+    })
+  };
 
   render() {
     const { firstPokemonSelected, secondPokemonSelected } = this.state;
@@ -24,23 +33,32 @@ class PokemonSelection extends Component {
             <Column lg={6}>
               <div className="SelectionInner">
                 <h2 className="selectionTitle">pokemon 1</h2>
-                <p>AutocompleteSearchBar</p>
-                <p>PokemonCard</p>
-              </div>              
+                <PokemonSearch
+                  inform={this.checkChildInput}
+                  identifier="firstPokemonSelected"
+                />
+                {firstPokemonSelected}                
+                <PokemonCard pokemonName={this.state.firstPokemonSelected} />
+              </div>
             </Column>
             <Column lg={6}>
               <div className="SelectionInner">
                 <h2 className="selectionTitle">pokemon 2</h2>
-                <p>AutocompleteSearchBar</p>
+                <PokemonSearch
+                  inform={this.checkChildInput}
+                  identifier="secondPokemonSelected"
+                />
+                {secondPokemonSelected}
+                <PokemonCard pokemonName={this.state.secondPokemonSelected} />
                 <p>PokemonCard</p>
-              </div>              
+              </div>
             </Column>
           </Row>
           <Row>
             <Column>
               <div className="SelectionCompareButton">
                 {firstPokemonSelected &&
-                secondPokemonSelected && <button>Compare</button>}
+                  secondPokemonSelected && <button>Compare</button>}
               </div>
             </Column>
           </Row>
@@ -58,7 +76,7 @@ const SelectionSection = Styled.div`
   }
 
   .selectionTitle {
-    ${type('heading2')}
+    ${type("heading2")}
     color: ${colours.accentColor}
   }
 
