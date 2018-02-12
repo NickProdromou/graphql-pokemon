@@ -31,6 +31,7 @@ Callout.defaultProps = {
 
 const StyledCallout = Styled.section`
   background: ${colours.primaryColorLight};
+  padding: ${spacing.mid.level4} 0;
 
   .CalloutInner {
     padding: 0 ${spacing.mid.level1};
