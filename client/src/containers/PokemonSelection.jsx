@@ -12,15 +12,15 @@ class PokemonSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstPokemonSelected: false,
-      secondPokemonSelected: false
+      firstPokemonSelected: "",
+      secondPokemonSelected: ""
     };
   }
 
   checkChildInput = (value, identifier) => {
     this.setState({
       [identifier]: value.suggestion
-    })
+    });
   };
 
   render() {
@@ -32,33 +32,35 @@ class PokemonSelection extends Component {
           <Row className="SelectionRow">
             <Column lg={6}>
               <div className="SelectionInner">
-                <h2 className="selectionTitle">pokemon 1</h2>
                 <PokemonSearch
                   inform={this.checkChildInput}
                   identifier="firstPokemonSelected"
                 />
-                {firstPokemonSelected}                
-                <PokemonCard pokemonName={this.state.firstPokemonSelected} />
+                {firstPokemonSelected && (
+                  <PokemonCard pokemonName={this.state.firstPokemonSelected} />
+                )}
               </div>
             </Column>
             <Column lg={6}>
               <div className="SelectionInner">
-                <h2 className="selectionTitle">pokemon 2</h2>
                 <PokemonSearch
                   inform={this.checkChildInput}
                   identifier="secondPokemonSelected"
                 />
-                {secondPokemonSelected}
-                <PokemonCard pokemonName={this.state.secondPokemonSelected} />
-                <p>PokemonCard</p>
+                {secondPokemonSelected && (
+                  <PokemonCard pokemonName={this.state.secondPokemonSelected} />
+                )}
               </div>
             </Column>
           </Row>
           <Row>
             <Column>
-              <div className="SelectionCompareButton">
+              <div className="SelectionCompareButtonRow">
                 {firstPokemonSelected &&
-                  secondPokemonSelected && <button>Compare</button>}
+                  secondPokemonSelected &&
+                  firstPokemonSelected !== secondPokemonSelected && (
+                    <button className="SelectionCompareButton">See Comparison Chart</button>
+                  )}
               </div>
             </Column>
           </Row>
@@ -71,13 +73,20 @@ class PokemonSelection extends Component {
 const SelectionSection = Styled.div`  
   flex: 1;
 
-  .SelectionInner, .SelectionCompareButton {
+  .SelectionInner, .SelectionCompareButtonRow {
     padding: 0 ${spacing.mid.level1};    
   }
 
   .selectionTitle {
     ${type("heading2")}
-    color: ${colours.accentColor}
+    color: ${colours.accentColor};
+  }
+
+  .SelectionCompareButton {
+    ${type('ui')}
+    background: ${colours.accentColor};    
+    color: ${colours.primaryColorLight};
+    padding: ${spacing.small.level2} ${spacing.small.level3};
   }
 
 `;

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Styled from "styled-components";
 import Autosuggest from "react-autosuggest";
+
 import pokemonList from "../helpers/pokemonList";
+import { spacing, colours } from "../style/variables";
+import { type } from "../style/mixins/index";
 
 export default class PokemonSearch extends Component {
   static propTypes = {
     inform: PropTypes.func.isRequired,
-    identifier: PropTypes.string.isRequired,
+    identifier: PropTypes.string.isRequired
   };
 
   constructor(props) {
@@ -25,16 +29,20 @@ export default class PokemonSearch extends Component {
   };
 
   onSuggestionSelected = (event, selectedValue) => {
+    this.setState({
+      value: '',
+      suggestions: []
+    })
     this.props.inform(selectedValue, this.props.identifier);
-  }
- 
+  };
+
   onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: []
     });
   };
 
-  onChange = (event, { newValue }) => {    
+  onChange = (event, { newValue }) => {
     this.setState({
       value: newValue
     });
@@ -53,7 +61,7 @@ export default class PokemonSearch extends Component {
         );
   };
 
-  renderSuggestion = suggestion => <div>{suggestion}</div>;
+  renderSuggestion = suggestion => (<span className="react-autosuggest__suggestions-item">{suggestion}</span>);
 
   render() {
     const { suggestions, value } = this.state;
@@ -65,15 +73,57 @@ export default class PokemonSearch extends Component {
     };
 
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        onSuggestionSelected={this.onSuggestionSelected}
-        getSuggestionValue={this.getSuggestionValue}
-        renderSuggestion={this.renderSuggestion}
-        inputProps={inputProps}
-      />
+      <SearchContainer>
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          onSuggestionSelected={this.onSuggestionSelected}
+          getSuggestionValue={this.getSuggestionValue}
+          renderSuggestion={this.renderSuggestion}
+          inputProps={inputProps}
+        />
+      </SearchContainer>
     );
   }
 }
+
+const SearchContainer = Styled.div`
+.react-autosuggest {  
+
+  &__input {
+    border: 1px solid ${colours.dividerColor};
+    padding: ${spacing.small.level2} ${spacing.small.level3};
+    width: 100%;
+  }
+
+  &__suggestion {
+    ${type('ui')}
+    color: ${colours.primaryTextColor};
+    padding: 8px;
+
+    &--highlighted {
+      background: ${colours.primaryColorDark};
+    }
+  }
+
+  &__suggestions {
+    
+    &-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;      
+    }
+
+    &-container {    
+      
+      &--open {
+        border: 1px solid ${colours.dividerColor};    
+      }
+
+    }  
+  }
+  
+}
+
+`;

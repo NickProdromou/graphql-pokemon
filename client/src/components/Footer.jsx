@@ -7,8 +7,8 @@ import { type } from "../style/mixins/index";
 const Footer = () => (
   <StyledFooter className="Footer">
     <Page>
-      <Row fluid>
-        <Column fluid>
+      <Row>
+        <Column>
           <h1 className="FooterText">&copy; Nick Prodromou 2018</h1>
         </Column>
       </Row>

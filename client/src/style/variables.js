@@ -25,10 +25,12 @@ export const colours = {
   primaryColor: "#FFEB3B",
   primaryColorLight: "#FFF9C4",
   primaryColorText: "#212121",
+  whiteText: '#FFFFFF',
   accentColor: "#FF5252",
   primaryTextColor: "#212121",
   secondaryTextColor: "#757575",
-  dividerColor: "#BDBDBD"
+  dividerColor: "#BDBDBD",
+  borderColor: '#EEEEEE',
 };
 
 export const breakpoints = {
