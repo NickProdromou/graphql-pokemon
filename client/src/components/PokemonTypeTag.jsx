@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Styled, {css} from "styled-components";
-import { spacing, colours } from "../style/variables";
+import { spacing, colours, pokemonTypeColours } from "../style/variables";
 import { type as typeMixin } from "../style/mixins/index";
 
 const PokemonTypeTag = ({ type }) => <TypeTag type={type}>{type}</TypeTag>;
 
 const TypeTag = Styled.span`
   ${typeMixin('detail')}
+  border-radius: 10px;
   color: ${colours.whiteText};
   padding: ${spacing.small.level2} ${spacing.small.level4};  
 
@@ -16,49 +17,49 @@ const TypeTag = Styled.span`
   }
 
   ${(props) => props && props.type === 'Bug' && css`
-    background: green;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Dragon' && css`
-    background: purple;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Ice' && css`
-    background: lightblue;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Fighting' && css`
-    background: red;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Fire' && css`
-    background: orange;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Flying' && css`
-    background: purple;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Grass' && css`
-    background: green;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Ghost' && css`
-    background: purple;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Ground' && css`
-    background: brown;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Electric' && css`
-    background: yellow;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Normal' && css`
-    background: gold;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Poison' && css`
-    background: purple;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Psychic' && css`
-    background: pink;
+    background: ${pokemonTypeColours[props.type]};
   `}
   ${(props) => props && props.type === 'Rock' && css`
-    background: brown;
+    background: ${pokemonTypeColours[props.type]};
   `}  
   ${(props) => props && props.type === 'Water' && css`
-    background: blue;
+    background: ${pokemonTypeColours[props.type]};
   `}
 `;
 
