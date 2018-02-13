@@ -9,10 +9,9 @@ exports[`Header Component It renders without error 1`] = `
   >
     <section
       className="sc-bwzfXH irrVft"
-      fluid={true}
     >
       <div
-        className="sc-htpNat eWAgNU"
+        className="sc-htpNat bKOCBb"
       >
         <h1
           className="HeaderTitle"

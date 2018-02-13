@@ -7,8 +7,8 @@ import { type } from "../style/mixins/index";
 const Header = () => (
   <StyledHeader className="Header">
     <Page>
-      <Row fluid>
-        <Column fluid>
+      <Row>
+        <Column>
           <h1 className="HeaderTitle">Compare a pokémon</h1>
         </Column>
       </Row>

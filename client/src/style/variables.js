@@ -25,10 +25,30 @@ export const colours = {
   primaryColor: "#FFEB3B",
   primaryColorLight: "#FFF9C4",
   primaryColorText: "#212121",
+  whiteText: "#FFFFFF",
   accentColor: "#FF5252",
   primaryTextColor: "#212121",
   secondaryTextColor: "#757575",
-  dividerColor: "#BDBDBD"
+  dividerColor: "#BDBDBD",
+  borderColor: "#EEEEEE"
+};
+
+export const pokemonTypeColours = {
+  Bug: "#A8B820",
+  Dragon: "#7038F8",
+  Ice: "#98D8D8",
+  Fighting: "#C03028",
+  Fire: "#F08030",
+  Flying: "#A890F0",
+  Grass: "#78C850",
+  Ghost: "#705898",
+  Ground: "#E0C068",
+  Electric: "#F8D030",
+  Normal: "#A8A878",
+  Poison: "#A040A0",
+  Psychic: "#F85888",
+  Rock: "#B8A038",
+  Water: "#6890F0"
 };
 
 export const breakpoints = {

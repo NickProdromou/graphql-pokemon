@@ -8,4 +8,6 @@ describe("PokemonSelection Component", () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test("Compare button should not be visible when no pokemon selected")
+  test("Compare button should be shown when 2 pokemon selected")
 });
