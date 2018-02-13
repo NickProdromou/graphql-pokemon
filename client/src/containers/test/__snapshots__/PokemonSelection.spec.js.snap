@@ -2,7 +2,7 @@
 
 exports[`PokemonSelection Component It renders without error 1`] = `
 <div
-  className="sc-ifAKCX dmHmU"
+  className="sc-gzVnrw dQNkVN"
 >
   <div
     className="sc-bxivhb bIAnAi"
@@ -16,17 +16,36 @@ exports[`PokemonSelection Component It renders without error 1`] = `
         <div
           className="SelectionInner"
         >
-          <h2
-            className="selectionTitle"
+          <div
+            className="sc-ifAKCX dhZuFj"
           >
-            pokemon 1
-          </h2>
-          <p>
-            AutocompleteSearchBar
-          </p>
-          <p>
-            PokemonCard
-          </p>
+            <div
+              className="react-autosuggest__container"
+            >
+              <input
+                aria-activedescendant={null}
+                aria-autocomplete="list"
+                aria-expanded={false}
+                aria-haspopup={false}
+                aria-owns="react-autowhatever-1"
+                autoComplete="off"
+                className="react-autosuggest__input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Search for a Pokemon"
+                role="combobox"
+                type="text"
+                value=""
+              />
+              <div
+                className="react-autosuggest__suggestions-container"
+                id="react-autowhatever-1"
+              />
+            </div>
+          </div>
+          
         </div>
       </div>
       <div
@@ -35,17 +54,36 @@ exports[`PokemonSelection Component It renders without error 1`] = `
         <div
           className="SelectionInner"
         >
-          <h2
-            className="selectionTitle"
+          <div
+            className="sc-ifAKCX dhZuFj"
           >
-            pokemon 2
-          </h2>
-          <p>
-            AutocompleteSearchBar
-          </p>
-          <p>
-            PokemonCard
-          </p>
+            <div
+              className="react-autosuggest__container"
+            >
+              <input
+                aria-activedescendant={null}
+                aria-autocomplete="list"
+                aria-expanded={false}
+                aria-haspopup={false}
+                aria-owns="react-autowhatever-1"
+                autoComplete="off"
+                className="react-autosuggest__input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Search for a Pokemon"
+                role="combobox"
+                type="text"
+                value=""
+              />
+              <div
+                className="react-autosuggest__suggestions-container"
+                id="react-autowhatever-1"
+              />
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -56,11 +94,9 @@ exports[`PokemonSelection Component It renders without error 1`] = `
         className="sc-htpNat bKOCBb"
       >
         <div
-          className="SelectionCompareButton"
+          className="SelectionCompareButtonRow"
         >
-          <button>
-            Compare
-          </button>
+          
         </div>
       </div>
     </section>

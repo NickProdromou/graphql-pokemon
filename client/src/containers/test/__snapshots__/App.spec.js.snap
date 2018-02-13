@@ -2,7 +2,7 @@
 
 exports[`App Component It renders without error 1`] = `
 <div
-  className="sc-htoDjs biwkzE"
+  className="sc-gZMcBi kCwQdE"
 >
   <header
     className="Header sc-ifAKCX ivpimK"
@@ -12,10 +12,9 @@ exports[`App Component It renders without error 1`] = `
     >
       <section
         className="sc-bwzfXH irrVft"
-        fluid={true}
       >
         <div
-          className="sc-htpNat eWAgNU"
+          className="sc-htpNat bKOCBb"
         >
           <h1
             className="HeaderTitle"
@@ -60,7 +59,7 @@ exports[`App Component It renders without error 1`] = `
       </div>
     </section>
     <div
-      className="sc-gzVnrw jKwgWP"
+      className="sc-iwsKbI gVCcpd"
     >
       <div
         className="sc-bxivhb bIAnAi"
@@ -74,17 +73,36 @@ exports[`App Component It renders without error 1`] = `
             <div
               className="SelectionInner"
             >
-              <h2
-                className="selectionTitle"
+              <div
+                className="sc-gzVnrw cJpwCE"
               >
-                pokemon 1
-              </h2>
-              <p>
-                AutocompleteSearchBar
-              </p>
-              <p>
-                PokemonCard
-              </p>
+                <div
+                  className="react-autosuggest__container"
+                >
+                  <input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={false}
+                    aria-haspopup={false}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    className="react-autosuggest__input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a Pokemon"
+                    role="combobox"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="react-autosuggest__suggestions-container"
+                    id="react-autowhatever-1"
+                  />
+                </div>
+              </div>
+              
             </div>
           </div>
           <div
@@ -93,17 +111,36 @@ exports[`App Component It renders without error 1`] = `
             <div
               className="SelectionInner"
             >
-              <h2
-                className="selectionTitle"
+              <div
+                className="sc-gzVnrw cJpwCE"
               >
-                pokemon 2
-              </h2>
-              <p>
-                AutocompleteSearchBar
-              </p>
-              <p>
-                PokemonCard
-              </p>
+                <div
+                  className="react-autosuggest__container"
+                >
+                  <input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={false}
+                    aria-haspopup={false}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    className="react-autosuggest__input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a Pokemon"
+                    role="combobox"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    className="react-autosuggest__suggestions-container"
+                    id="react-autowhatever-1"
+                  />
+                </div>
+              </div>
+              
             </div>
           </div>
         </section>
@@ -114,11 +151,9 @@ exports[`App Component It renders without error 1`] = `
             className="sc-htpNat bKOCBb"
           >
             <div
-              className="SelectionCompareButton"
+              className="SelectionCompareButtonRow"
             >
-              <button>
-                Compare
-              </button>
+              
             </div>
           </div>
         </section>
@@ -133,10 +168,9 @@ exports[`App Component It renders without error 1`] = `
     >
       <section
         className="sc-bwzfXH irrVft"
-        fluid={true}
       >
         <div
-          className="sc-htpNat eWAgNU"
+          className="sc-htpNat bKOCBb"
         >
           <h1
             className="FooterText"
