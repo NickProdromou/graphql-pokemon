@@ -95,6 +95,7 @@ const SearchContainer = Styled.div`
     border: 1px solid ${colours.dividerColor};
     padding: ${spacing.small.level2} ${spacing.small.level3};
     width: 100%;
+    position: relative;
   }
 
   &__suggestion {
@@ -116,8 +117,11 @@ const SearchContainer = Styled.div`
     }
 
     &-container {    
-      
+        width: 292px;      
+        background: #fff;
+
       &--open {
+        position: absolute;
         border: 1px solid ${colours.dividerColor};    
       }
 
