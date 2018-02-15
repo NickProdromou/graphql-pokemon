@@ -3,54 +3,158 @@ import PropTypes from "prop-types";
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 
-import Pokemon from '../types/Pokemon';
+import Pokemon from "../types/Pokemon";
 
 const leftHandSide = gql`
   query($compare: String) {
-    pokemon(name: $compare) {
-      id
-      image
+  pokemon(name: $compare) {
+    id
+    number
+    name
+    classification
+    types
+    resistant
+    weaknesses
+    fleeRate
+    maxCP        
+    maxCP
+    maxHP
+    image
+    evolutionRequirements {
       name
-      types
-      classification
+      amount
+    }
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      minimum
+      maximum
+    }
+    attacks {
+      special {
+        name
+        type
+        damage
+      }
+    }
+    evolutions {
+      id
+      number
+      name
+      weight {
+        minimum
+        maximum
+      }
+      attacks {
+        fast {
+          name
+          type
+          damage
+        }
+        special {
+          name
+          type
+          damage
+        }
+      }
     }
   }
+}
+
 `;
 
 const rightHandSide = gql`
   query($to: String) {
-    pokemon(name: $to) {
-      id
-      image
+  pokemon(name: $to) {
+    id
+    number
+    name
+    classification
+    types
+    resistant
+    weaknesses
+    fleeRate
+    maxCP        
+    maxCP
+    maxHP
+    image
+    evolutionRequirements {
       name
-      types
-      classification
+      amount
+    }
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      minimum
+      maximum
+    }
+    attacks {
+      special {
+        name
+        type
+        damage
+      }
+    }
+    evolutions {
+      id
+      number
+      name
+      weight {
+        minimum
+        maximum
+      }
+      attacks {
+        fast {
+          name
+          type
+          damage
+        }
+        special {
+          name
+          type
+          damage
+        }
+      }
     }
   }
+}
+
 `;
 
-const ComparePage = props => {
-  console.log(Pokemon);
-  console.log(props);
-  return (
-    <div>
-      {props.pokemonLeft.loading ? (
-        <p>loading</p>
-      ) : (
-        <div>{JSON.stringify(props.pokemonLeft.pokemon, null, 2)}</div>
-      )}
-      {props.pokemonRight.loading ? (
-        <p>loading</p>
-      ) : (
-        <div>{JSON.stringify(props.pokemonRight.pokemon, null, 2)}</div>
-      )}
-    </div>
-  );
-};
+const ComparePage = ({ pokemonLeft, pokemonRight }) => (
+  <div>
+    {pokemonLeft.loading ? (
+      <p>loading</p>
+    ) : (
+      <div>
+        <img src={pokemonLeft.pokemon.image} alt="pokemon" />
+        <p>{JSON.stringify(pokemonLeft.pokemon, null, '\t')}</p>
+      </div>
+    )}
+    {pokemonRight.loading ? (
+      <p>loading</p>
+    ) : (
+      <div>
+        <img src={pokemonRight.pokemon.image} alt="pokemon" />
+        <p>{JSON.stringify(pokemonRight.pokemon, null, '\t')}</p>
+      </div>
+    )}
+  </div>
+);
 
 ComparePage.propTypes = {
-  pokemonLeft: PropTypes.shape(Pokemon).isRequired,
-  pokemonRight: PropTypes.shape(Pokemon).isRequired
+  pokemonLeft: PropTypes.shape({
+    pokemon: PropTypes.shape(Pokemon),
+    loading: PropTypes.bool
+  }).isRequired,
+  pokemonRight: PropTypes.shape({
+    pokemon: PropTypes.shape(Pokemon),
+    loading: PropTypes.bool
+  }).isRequired
 };
 
 const ComparePageWithData = compose(
