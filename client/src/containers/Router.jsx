@@ -9,7 +9,7 @@ const AppRouter = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={SelectionPage} />
-      <Route path="/compare/:p1/:p2" component={ComparePage} />
+      <Route path="/compare/:compare/:to" component={ComparePage} />
       <Route path="*" component={ErrorPage} />
     </Switch>
   </Router>
