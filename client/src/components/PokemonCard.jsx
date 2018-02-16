@@ -36,7 +36,7 @@ const PokemonCard = ({ data }) => (
             {data.pokemon.classification}
           </div>
           <div className="PokemonCardTypes">
-            {data.pokemon.types.map(t => <PokemonTypeTag type={t} />)}
+            {data.pokemon.types.map(t => <PokemonTypeTag key={`type_${data.pokemon.name}_${t}`} type={t} />)}
           </div>
         </div>
       </StyledPokemonCard>

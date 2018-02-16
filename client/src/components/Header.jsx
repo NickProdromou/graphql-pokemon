@@ -1,5 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
+import { Link } from 'react-router-dom';
 import { Page, Row, Column } from "hedron";
 import { spacing, colours } from "../style/variables";
 import { type } from "../style/mixins/index";
@@ -9,7 +10,9 @@ const Header = () => (
     <Page>
       <Row>
         <Column>
-          <h1 className="HeaderTitle">Compare a pokémon</h1>
+          <Link className="HeaderLink" to="/">
+            <h1 className="HeaderTitle">Compare a pokémon</h1>
+          </Link>
         </Column>
       </Row>
     </Page>
@@ -19,6 +22,10 @@ const Header = () => (
 const StyledHeader = Styled.header`
   background: ${colours.primaryColorDark};
   box-shadow: 1px 4px 17px rgba(0,0,0,0.5);
+
+  .HeaderLink {
+    text-decoration: none;
+  }
 
   .HeaderTitle {
     ${type("heading2")};

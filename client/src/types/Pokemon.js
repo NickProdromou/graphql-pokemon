@@ -36,5 +36,5 @@ const BasePokemon = {
 };
 
 export default Object.assign({}, BasePokemon, {
-  evolutions: PropTypes.arrayOf(BasePokemon)
+  evolutions: PropTypes.arrayOf(PropTypes.shape(BasePokemon))
 })
