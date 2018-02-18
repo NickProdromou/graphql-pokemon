@@ -36,7 +36,9 @@ const PokemonCard = ({ data }) => (
             {data.pokemon.classification}
           </div>
           <div className="PokemonCardTypes">
-            {data.pokemon.types.map(t => <PokemonTypeTag type={t} />)}
+            {data.pokemon.types.map(t => (
+              <PokemonTypeTag key={`type_${data.pokemon.name}_${t}`} type={t} />
+            ))}
           </div>
         </div>
       </StyledPokemonCard>
@@ -56,6 +58,8 @@ PokemonCard.propTypes = {
 const StyledPokemonCard = Styled.div`
   ${type("ui")}
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+  margin-bottom: ${spacing.small.level4};
+  
 
   .PokemonCardImageContainer {
     margin: 0 auto;

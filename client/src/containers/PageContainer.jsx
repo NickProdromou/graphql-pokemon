@@ -1,25 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Styled from "styled-components";
 import { Page } from "hedron";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Callout from "../components/Callout";
-import PokemonSelection from "./PokemonSelection";
 
-const App = () => (
+const PageContainer = ({ children }) => (
   <SiteContainer fluid>
     <Header />
     <Page className="SiteContainerMain" fluid>
-      <Callout
-        title="Welcome to the Pokémon comparer"
-        subtitle="Select 2 pokemon and compare their unique traits stats and skills against one another"
-      />
-      <PokemonSelection />
-    </Page> 
+      {children}
+    </Page>
     <Footer />
   </SiteContainer>
 );
+
+PageContainer.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
 
 const SiteContainer = Styled.div`
   display: flex;
@@ -33,4 +35,4 @@ const SiteContainer = Styled.div`
   }
 `;
 
-export default App;
+export default PageContainer;

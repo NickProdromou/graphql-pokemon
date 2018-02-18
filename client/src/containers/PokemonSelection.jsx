@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Page, Column, Row } from "hedron";
 
 import { spacing, colours } from "../style/variables";
@@ -59,7 +60,12 @@ class PokemonSelection extends Component {
                 {firstPokemonSelected &&
                   secondPokemonSelected &&
                   firstPokemonSelected !== secondPokemonSelected && (
-                    <button className="SelectionCompareButton">See Comparison Chart</button>
+                    <Link
+                      className="SelectionCompareButton"
+                      to={`/compare/${firstPokemonSelected}/${secondPokemonSelected}`}
+                    >
+                      See Comparison Chart
+                    </Link>
                   )}
               </div>
             </Column>
@@ -83,7 +89,7 @@ const SelectionSection = Styled.div`
   }
 
   .SelectionCompareButton {
-    ${type('ui')}
+    ${type("ui")}
     background: ${colours.accentColor};    
     color: ${colours.primaryColorLight};
     padding: ${spacing.small.level2} ${spacing.small.level3};

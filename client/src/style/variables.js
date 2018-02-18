@@ -48,7 +48,10 @@ export const pokemonTypeColours = {
   Poison: "#A040A0",
   Psychic: "#F85888",
   Rock: "#B8A038",
-  Water: "#6890F0"
+  Water: "#6890F0",
+  Steel: "#B8B8D0",
+  Dark: '#705848',
+  Fairy: '#EE99AC',
 };
 
 export const breakpoints = {
