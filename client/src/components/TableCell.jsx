@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Styled, {css} from 'styled-components';
 
 import { spacing, colours } from '../style/variables';
-import { type } from '../style/mixins/index';
+import { type, mediaQuery } from '../style/mixins/index';
 
 const TableCell = ({children, title, wrap}) => (
   <StyledCell wrap={wrap} title={title}>
@@ -22,8 +22,8 @@ TableCell.defaultProps = {
   wrap: false,
 }
 
-const StyledCell = Styled.div`  
-  flex: 1 0 306px;
+const StyledCell = Styled.div`    
+  flex: 1 0 33%;
   align-items: flex-start;
   padding: ${spacing.small.level3};
   border: 1px solid #eee;
@@ -34,11 +34,18 @@ const StyledCell = Styled.div`
   `}    
 
   ${(props) => props && props.title && css`
-   ${type("ui")}
+    ${type("tiny")}
     background: ${colours.accentColor};
     color: ${colours.whiteText};
     text-transform: uppercase;
+
+
+  ${mediaQuery("small",`
+    ${type("ui")}    
+  `)}
+
   `}    
 `
 
 export default TableCell;
+  

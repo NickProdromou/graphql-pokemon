@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Styled from "styled-components";
 
 import { spacing } from "../style/variables";
+import { mediaQuery } from "../style/mixins/index";
 import Pokemon from "../types/Pokemon";
 import PokemonTypeTag from "./PokemonTypeTag";
 import TableCell from "./TableCell";
@@ -228,7 +229,7 @@ export default class ComparisonTable extends Component {
     return (
       <Table className="TableContainer">
         <div className="TableHeader">
-          <div className="TableHeaderCol" />
+          <div className="TableHeaderCol EmptyCell" />
           <div className="TableHeaderCol">
             <img className="TableHeaderImage" src={compare.image} alt="" />
           </div>
@@ -261,7 +262,7 @@ const Table = Styled.div`
   }  
 
   .TableHeaderCol {
-    flex: 1 0 306px;
+    flex: 1 0 33%;
     border: 1px solid #eee;
     text-align: center;
     overflow: hidden;
@@ -276,8 +277,23 @@ const Table = Styled.div`
     flex-direction: column;
   }
 
+  .EmptyCell {
+    display: none;
+
+    ${mediaQuery("small", `
+       display: block;
+    `)}
+  }
+
   .TableRow {
     display: flex;    
+    flex-direction: column;
+
+    ${mediaQuery("small", `
+      flex-direction: row;
+      flex-wrap: no-wrap;
+    `)}
+
   }    
 
   .TypeTag {
