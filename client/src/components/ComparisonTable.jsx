@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Styled from "styled-components";
 
-import { type as typeMixin } from "../style/mixins/index";
-import { colours, spacing } from "../style/variables";
+import { spacing } from "../style/variables";
 import Pokemon from "../types/Pokemon";
 import PokemonTypeTag from "./PokemonTypeTag";
+import TableCell from "./TableCell";
 import AttackCell from "./AttackCell";
+import PokemonCard from "./PokemonCard";
+import EvolutionRequirementsCard from "./EvolutionRequirementsCard";
+import PokemonDimensions from "./PokemonDimensions";
 
 export default class ComparisonTable extends Component {
   static propTypes = {
@@ -18,125 +21,171 @@ export default class ComparisonTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      validFields: this.stripEmptyFields(props.to ,props.compare, props.fields),
-    }
+      validFields: this.stripUnwantedFields(
+        this.stripEmptyFields(props.to, props.compare, props.fields)
+      )
+    };
   }
-  
+
   getTableRows = fields =>
     fields.map(field => (
       <div className="TableRow" key={`${field}-field`}>
-        <div className="TableCol TableTitleColumn">
-          <p>{field}</p>
-        </div>
+        <TableCell title>
+          <p>{this.mapFieldTitles(field)}</p>
+        </TableCell>
         {this.mapFieldTypes(field, this.props.compare[field])}
         {this.mapFieldTypes(field, this.props.to[field])}
       </div>
     ));
 
-  stripEmptyFields = (p1, p2, fields) => fields.filter(field => p1[field] || p2[field])
+  stripEmptyFields = (p1, p2, fields) =>
+    fields.filter(field => p1[field] || p2[field]);
+
+  stripUnwantedFields = fields =>
+    fields.filter(field => field !== "__typename" && field !== "image"  && field !== "id");
+
+  mapFieldTitles = title => {
+    switch (title) {
+      case "evolutionRequirements":
+        return "evolution Requirements";
+
+      case "maxCP":
+        return "max CP";
+
+      case "maxHP":
+        return "max Hp";
+
+      case "fleeRate":
+        return "flee rate";
+
+      default:
+        return title;
+    }
+  };
 
   mapFieldTypes = (field, value) => {
     switch (field) {
       case "id":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
 
       case "name":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
 
       case "number":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
+
       case "classification":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
+
       case "types":
         return (
-          <div className="TypeCell TableCol ">
+          <TableCell wrap>
             {value.map(pokeType => (
               <PokemonTypeTag key={`types_${pokeType}`} type={pokeType}>
                 {pokeType}
               </PokemonTypeTag>
             ))}
-          </div>
+          </TableCell>
         );
 
       case "resistant":
         return (
-          <div className="TypeCell TableCol">
+          <TableCell wrap>
             {value.map(pokeType => (
               <PokemonTypeTag key={`resistant_${pokeType}`} type={pokeType}>
                 {pokeType}
               </PokemonTypeTag>
             ))}
-          </div>
+          </TableCell>
         );
 
       case "weaknesses":
         return (
-          <div className="TypeCell TableCol ">
+          <TableCell wrap>
             {value.map(pokeType => (
               <PokemonTypeTag key={`weaknesses_${pokeType}`} type={pokeType}>
                 {pokeType}
               </PokemonTypeTag>
             ))}
-          </div>
+          </TableCell>
+        );
+
+      case "evolutions":
+        return value !== null ? (
+          <TableCell>
+            {value.map(pokemon => <PokemonCard pokemonName={pokemon.name} />)}
+          </TableCell>
+        ) : (
+          <TableCell />
+        );
+
+      case "evolutionRequirements":
+        return value !== null ? (
+          <TableCell>
+            <EvolutionRequirementsCard
+              name={value.name}
+              amount={value.amount}
+            />
+          </TableCell>
+        ) : (
+          <TableCell />
         );
 
       case "fleeRate":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
 
       case "maxCP":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
 
       case "maxHP":
         return (
-          <div className="TableCol">
+          <TableCell>
             <span>{value}</span>
-          </div>
+          </TableCell>
         );
 
       case "weight":
         return (
-          <div className="TableCol">
-            <span>{value.minimum}</span>
-            <span>{value.maximum}</span>
-          </div>
+          <TableCell>
+            <PokemonDimensions min={value.minimum} max={value.maximum} />
+          </TableCell>
         );
 
       case "height":
         return (
-          <div className="TableCol">
-            <span>{value.minimum}</span>
-            <span>{value.maximum}</span>
-          </div>
+          <TableCell>
+            <PokemonDimensions min={value.minimum} max={value.maximum} />
+          </TableCell>
         );
 
       case "attacks":
         if (value.special) {
           return (
-            <div className="TableCol">
+            <TableCell>
               {value.special.map(attack => (
                 <AttackCell
                   key={`attack_${attack.name}_${attack.damage}-special`}
@@ -146,13 +195,13 @@ export default class ComparisonTable extends Component {
                   category="special"
                 />
               ))}
-            </div>
+            </TableCell>
           );
         }
 
         if (value.fast) {
           return (
-            <div className="TableCol">
+            <TableCell>
               {value.special.map(attack => (
                 <AttackCell
                   key={`attack_${attack.name}_${attack.damage}-fast`}
@@ -162,7 +211,7 @@ export default class ComparisonTable extends Component {
                   category="fast"
                 />
               ))}
-            </div>
+            </TableCell>
           );
         }
         break;
@@ -182,15 +231,9 @@ export default class ComparisonTable extends Component {
           <div className="TableHeaderCol" />
           <div className="TableHeaderCol">
             <img className="TableHeaderImage" src={compare.image} alt="" />
-            <div>
-              <span>{compare.name}</span>
-            </div>
           </div>
           <div className="TableHeaderCol">
             <img className="TableHeaderImage" src={to.image} alt="" />
-            <div>
-              <span>{to.name}</span>
-            </div>
           </div>
         </div>
         <div className="TableBody">{this.getTableRows(validFields)}</div>
@@ -215,14 +258,7 @@ const Table = Styled.div`
 
   .TableHeaderImage {
     height: 200px;    
-  }
-
-  .TableTitleColumn {
-    ${typeMixin("ui")}
-    background: ${colours.accentColor};
-    color: ${colours.whiteText};
-    text-transform: uppercase;
-  }
+  }  
 
   .TableHeaderCol {
     flex: 1 0 306px;
@@ -242,19 +278,7 @@ const Table = Styled.div`
 
   .TableRow {
     display: flex;    
-  }  
-
-  .TableCol {
-    flex: 1 0 306px;
-    align-items: flex-start;
-    padding: 10px;
-    border: 1px solid #eee;
-  }
-
-  .TypeCell {
-    display: flex;
-    flex-wrap; wrap;
-  }
+  }    
 
   .TypeTag {
     margin-bottom: ${spacing.small.level2};
