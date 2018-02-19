@@ -51,7 +51,13 @@ PokemonCard.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
-    pokemon: PokemonCard.object
+    pokemon: PropTypes.shape({
+      id: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      types: PropTypes.arrayOf(PropTypes.string),
+      classification: PropTypes.string,
+    })
   }).isRequired
 };
 
