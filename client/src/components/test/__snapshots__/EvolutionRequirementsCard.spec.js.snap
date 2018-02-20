@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EvolutionRequirementsCard component renders 1`] = `
+<div
+  className="sc-bdVaJa jUUOdF"
+>
+  <span
+    className="RequirementName"
+  >
+    <span
+      className="RequirementAmount"
+    >
+      23
+    </span>
+    foo
+  </span>
+</div>
+`;

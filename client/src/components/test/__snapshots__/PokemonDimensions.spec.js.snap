@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonDimensions component renders 1`] = `
+<div
+  className="sc-bdVaJa cKBsET"
+>
+  <div>
+    <span
+      className="DimensionTitle"
+    >
+      min:
+    </span>
+    <span
+      className="DimensionAmount"
+    >
+      34
+    </span>
+  </div>
+  <div>
+    <span
+      className="DimensionTitle"
+    >
+      max:
+    </span>
+    <span
+      className="DimensionAmount"
+    >
+      65
+    </span>
+  </div>
+</div>
+`;

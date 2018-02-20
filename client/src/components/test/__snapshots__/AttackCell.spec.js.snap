@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttackCell component renders 1`] = `
+<div
+  className="sc-bwzfXH jCIkPP"
+>
+  <h3
+    className="AttackTitle"
+  >
+    foo
+  </h3>
+  <div
+    className="AttackDamage"
+  >
+    damage: 
+    54
+  </div>
+  <div
+    className="AttackCategory"
+  >
+    category: 
+    baz
+  </div>
+  <div
+    className="AttackType"
+  >
+    <span
+      className="TypeTag sc-bdVaJa eBMyvA"
+      type="bar"
+    >
+      bar
+    </span>
+  </div>
+</div>
+`;
