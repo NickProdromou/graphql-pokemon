@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableCell component renders with children 1`] = `
+<div
+  className="sc-bdVaJa lnMYig"
+  title={false}
+  wrap={false}
+>
+  <div>
+    <p>
+      This is a children
+    </p>
+  </div>
+</div>
+`;

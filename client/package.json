@@ -61,11 +61,16 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "apollo-mocknetworkinterface": "^2.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "jest-enzyme": "^4.2.0",
     "prettier": "1.10.2"
   },
   "scripts": {
@@ -78,6 +83,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],

@@ -1,4 +1,8 @@
-const basePokemon = `
+import gql from "graphql-tag";
+
+const fullPokemonQuery = gql`
+query($name: String) {
+    pokemon(name: $name) {
       name
       number
       classification
@@ -29,14 +33,16 @@ const basePokemon = `
           type
           damage
         }
+        fast {
+          name
+          type
+          damage
+        }
       }
-`
-
-export default `
-  ${basePokemon}
-  evolutions {
-    ${basePokemon}
+      evolutions {
+        name
+      }
   }
-`;
-      
-
+}
+`
+export default fullPokemonQuery;

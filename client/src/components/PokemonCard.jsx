@@ -3,23 +3,11 @@ import PropTypes from "prop-types";
 import Styled from "styled-components";
 import { BubbleLoader } from "react-css-loaders";
 import { graphql } from "react-apollo";
-import gql from "graphql-tag";
 
 import PokemonTypeTag from "./PokemonTypeTag";
+import pokemonPreviewQuery from "../queries/pokemonPreview"
 import { spacing, colours } from "../style/variables";
 import { type } from "../style/mixins/index";
-
-const getSelectedPokemon = gql`
-  query($pokemonName: String) {
-    pokemon(name: $pokemonName) {
-      id
-      image
-      name
-      types
-      classification
-    }
-  }
-`;
 
 const PokemonCard = ({ data }) => (
   <div>
@@ -51,7 +39,13 @@ PokemonCard.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
-    pokemon: PokemonCard.object
+    pokemon: PropTypes.shape({
+      id: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      types: PropTypes.arrayOf(PropTypes.string),
+      classification: PropTypes.string,
+    })
   }).isRequired
 };
 
@@ -91,7 +85,7 @@ const StyledPokemonCard = Styled.div`
 
 `;
 
-const PokemonCardWithData = graphql(getSelectedPokemon, {
+const PokemonCardWithData = graphql(pokemonPreviewQuery, {
   options: props => ({
     variables: {
       pokemonName: props.pokemonName
