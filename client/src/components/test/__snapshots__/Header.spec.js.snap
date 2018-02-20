@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Component It renders without error 1`] = `
-<header
-  className="Header sc-ifAKCX ivpimK"
+<styled.header
+  className="Header"
 >
-  <div
-    className="sc-bxivhb bIAnAi"
-  >
-    <section
-      className="sc-bwzfXH irrVft"
-    >
-      <div
-        className="sc-htpNat bKOCBb"
-      >
-        <h1
-          className="HeaderTitle"
+  <Styled(PageContainer)>
+    <Styled(RowContainer)>
+      <Breakpoints>
+        <Link
+          className="HeaderLink"
+          replace={false}
+          to="/"
         >
-          Compare a pokémon
-        </h1>
-      </div>
-    </section>
-  </div>
-</header>
+          <h1
+            className="HeaderTitle"
+          >
+            Compare a pokémon
+          </h1>
+        </Link>
+      </Breakpoints>
+    </Styled(RowContainer)>
+  </Styled(PageContainer)>
+</styled.header>
 `;

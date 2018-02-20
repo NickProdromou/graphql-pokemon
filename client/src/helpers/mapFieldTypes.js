@@ -147,7 +147,7 @@ import PokemonDimensions from "../components/PokemonDimensions";
         if (value.fast) {
           return (
             <TableCell>
-              {value.special.map(attack => (
+              {value.fast.map(attack => (
                 <AttackCell
                   key={`attack_${attack.name}_${attack.damage}-fast`}
                   name={attack.name}
