@@ -2,7 +2,7 @@
 
 exports[`Callout component renders correctly with correct props 1`] = `
 <section
-  className="Callout sc-ifAKCX dVpvRL"
+  className="Callout sc-ifAKCX koFrwL"
 >
   <div
     className="sc-bxivhb bIAnAi"
@@ -35,7 +35,7 @@ exports[`Callout component renders correctly with correct props 1`] = `
 
 exports[`Callout component uses default props 1`] = `
 <section
-  className="Callout sc-ifAKCX dVpvRL"
+  className="Callout sc-ifAKCX koFrwL"
 >
   <div
     className="sc-bxivhb bIAnAi"
