@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Styled from "styled-components";
+import Styled, { css } from "styled-components";
 import { Page, Row, Column } from "hedron";
 import { spacing, colours } from "../style/variables";
 import { type } from "../style/mixins/index";
 
-const Callout = ({ title, subtitle }) => (
-  <StyledCallout className="Callout">
+const Callout = ({ title, subtitle, stretch }) => (
+  <StyledCallout className="Callout" stretch={stretch}>
     <Page>
       <Column fluid>
         <Row>
@@ -22,16 +22,24 @@ const Callout = ({ title, subtitle }) => (
 
 Callout.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
+  stretch: PropTypes.bool
 };
 
 Callout.defaultProps = {
-  subtitle: ""
+  subtitle: "",
+  stretch: false
 };
 
 const StyledCallout = Styled.section`
   background: ${colours.primaryColorLight};
   padding: ${spacing.mid.level4} 0;
+
+  ${props =>
+    props.stretch &&
+    css`
+      flex: 1;
+    `}
 
   .CalloutInner {
     padding: 0 ${spacing.mid.level1};
