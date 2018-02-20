@@ -135,7 +135,7 @@ const mapFieldTypes = (field, value) => {
               .filter(attack => attack.name)
           ].map(attack => (
             <AttackCell
-              key={`attack_${attack.name}_${attack.damage}-special`}
+              key={`attack_${attack.name}_${attack.damage}-${attack.category}`}
               name={attack.name}
               type={attack.type}
               damage={attack.damage}
